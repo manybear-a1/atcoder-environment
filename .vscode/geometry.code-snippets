@@ -1,0 +1,41 @@
+{
+  "distance-2d": {
+    "prefix": "distance-2d",
+    "body": [
+      "struct Point {",
+      "  double x, y;",
+      "};",
+      "double distance(Point a, Point b) {",
+      "  return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));",
+      "}"
+    ],
+    "description": "Calculate distance between two points in 2d space"
+  },
+  "distance-3d": {
+    "prefix": "distance-3d",
+    "body": [
+      "struct Point {",
+      "  double x, y, z;",
+      "};",
+      "double distance(Point a, Point b) {",
+      "  return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2) + pow(a.z - b.z, 2));",
+      "}"
+    ],
+    "description": "Calculate distance between two points in 3d space"
+  },
+  "PI": {
+    "description": "PI",
+    "prefix": "PI",
+    "body": [
+      "const double PI = 3.14159265358979323846;",
+      "double deg2rad(double deg)",
+      "{",
+      "  return deg * PI / 180;",
+      "}",
+      "double rad2deg(double rad)",
+      "{",
+      "  return rad * 180 / PI;",
+      "}"
+    ]
+  },
+}

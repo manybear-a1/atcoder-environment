@@ -1,0 +1,157 @@
+{ "input-N": {
+    "description": "load N from input",
+    "prefix": "ll N",
+    "body": [
+      "ll ${1:N};",
+      "cin >> ${1:N};"
+    ],
+    "scope": "cpp",
+  },
+  "input-M": {
+    "description": "load M from input",
+    "prefix": "ll M",
+    "body": [
+      "ll ${1:M};",
+      "cin >> ${1:M};"
+    ],
+    "scope": "cpp",
+  },
+  "input-K": {
+    "description": "load K from input",
+    "prefix": "ll K",
+    "body": [
+      "ll ${1:K};",
+      "cin >> ${1:K};"
+    ],
+    "scope": "cpp",
+  },
+  "input-Q": {
+    "description": "load Q from input",
+    "prefix": "ll Q",
+    "body": [
+      "ll ${1:Q};",
+      "cin >> ${1:Q};",
+      "rep(i, ${1:Q})",
+      "{",
+      "  ll t;",
+      "  cin >> t;",
+      "  switch (t){",
+      "  case 1:{",
+      "    ${2}",
+      "    break;",
+      "  }",
+      "  case 2:{",
+      "    ${3}",
+      "    break;",
+      "  }",
+      "  default:{",
+      "    break;",
+      "  }",
+      "  }",
+      "}"
+    ],
+    "scope": "cpp",
+  },
+  "input-S": {
+    "description": "load S from input",
+    "prefix": "string S",
+    "body": [
+      "string ${1:S};",
+      "cin >> ${1:S};"
+    ],
+    "scope": "cpp"
+  },
+  "input-x-y": {
+    "description": "load x, y from input",
+    "prefix": "ll x, y",
+    "body": [
+      "ll ${1:x}, ${2:y};",
+      "cin >> ${1:x} >> ${2:y};"
+    ],
+    "scope": "cpp"
+  },
+  "input-A-B": {
+    "description": "load A, B from input",
+    "prefix": "ll A, B",
+    "body": [
+      "ll ${1:A}, ${2:B};",
+      "cin >> ${1:A} >> ${2:B};"
+    ],
+    "scope": "cpp"
+  },
+  "input-N-M": {
+    "description": "load N, M from input",
+    "prefix": "ll N, M",
+    "body": [
+      "ll ${1:N}, ${2:M};",
+      "cin >> ${1:N} >> ${2:M};"
+    ],
+    "scope": "cpp"
+  },
+  "input-A array (length is N)": {
+    "description": "load A array from input (length is N)",
+    "prefix": "ll N-array",
+    "body": [
+      "ll ${1:N};",
+      "cin >> ${1:N};",
+      "vc<ll> ${2:A}(${1:N});",
+      "cin >> A;",
+    ],
+    "scope": "cpp"
+  },
+  "input-A-array": {
+    "description": "load A array from input",
+    "prefix": "vc<ll> A",
+    "body": [
+      "vc<ll> ${2:A}(${1:N});",
+      "cin >> A;",
+    ],
+    "scope": "cpp"
+  },
+  "input-H-W Grid": {
+    "description": "load grid from input",
+    "prefix": "ll H, W",
+    "body": [
+      "ll H, W;",
+      "cin >> H >> W;",
+      "//S[y][x]",
+      "vector<string> S(H);",
+      "rep(i, H) cin >> S[i];"
+    ],
+    "scope": "cpp"
+  },
+  "input-H-W Grid with start and goal": {
+    "description": "load grid from input ",
+    "prefix": "ll H, W with start and goal",
+    "body": [
+      "ll H, W;",
+      "cin >> H >> W;",
+      "//S[y][x]",
+      "vector<string> S(H);",
+      "//first=y,second=x",
+      "P start, goal;",
+      "rep(i, H){",
+      "  cin >> S[i];",
+      "  rep(j, W) {",
+      "    if (S[i][j] == 's')",
+      "    {",
+      "      start ={i, j};",
+      "    }",
+      "    else if (S[i][j] == 'g')",
+      "    {",
+      "      goal = {i, j};",
+      "    }",
+      "  }",
+      "}"
+    ],
+    "scope": "cpp"
+  },
+  "G": {
+    "description": "define G",
+    "prefix": "G",
+    "body": [
+      "vector<vector<ll>> G(${1:N});",
+    ],
+    "scope": "cpp"
+  },
+}

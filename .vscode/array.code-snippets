@@ -1,0 +1,34 @@
+{
+  "rotate": {
+    "prefix": "rotate",
+    "description": "rotate element in a vector",
+    "body": [
+      "#define vvl_kaiten(v)                               \\",
+      "  {                                                 \\",
+      "    ll n = size(v);                                 \\",
+      "    vv<ll> nx(n, vl(n));                            \\",
+      "    rep(i, n) rep(j, n) nx[j][n - i - 1] = v[i][j]; \\",
+      "    swap(nx, v);                                    \\",
+      "  } // 時計回りに90°回転",
+      "// #define vvl_kaiten(v) {ll n = size(v);vvl nx(n,vl(n));rep(i,n)rep(j,n)nx[n-j-1][i]=v[i][j];swap(nx,v);}//反時計周りに90°回転",
+      "",
+      "#define vs_kaiten(v)                                \\",
+      "  {                                                 \\",
+      "    ll n = size(v);                                 \\",
+      "    vc<string> nx(n, string(n, '.'));               \\",
+      "    rep(i, n) rep(j, n) nx[j][n - i - 1] = v[i][j]; \\",
+      "    swap(nx, v);                                    \\",
+      "  } // 文字列版 時計回りに90°回転",
+      "// #define vs_kaiten(v) {ll n = size(v);vs nx(n,string(n,'.'));rep(i,n)rep(j,n)nx[n-j-1][i]=v[i][j];swap(nx,v);}//文字列版　反時計周りに90°回転",
+    ]
+  },
+  "unique": {
+    "prefix": "unique",
+    "description": "unique elements in a vector",
+    "body": [
+      "//ref:https://cpprefjp.github.io/reference/algorithm/unique.html",
+      "sort(all(${1:v}));",
+      "${1:v}.erase(unique(all(${1:v})), ${1:v}.end());",
+    ]
+  }
+}

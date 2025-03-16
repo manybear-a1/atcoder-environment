@@ -1,0 +1,23 @@
+{
+  "fixed << setprecision(16) <<": {
+    "description": "fixed << setprecision(16) <<",
+    "prefix": "fixed << setprecision(16) <<",
+    "body": [
+      "fixed << setprecision(16) <<",
+    ],
+    "scope": "cpp"
+  },
+  "output 1d array": {
+    "prefix": "output-array",
+    "body": [
+      "rep(i, N)",
+      "{",
+      "  cout << A[i];",
+      "  if (i != N - 1)",
+      "    cout << \" \";",
+      "  else",
+      "    cout << endl;",
+      "}"
+    ]
+  }
+}

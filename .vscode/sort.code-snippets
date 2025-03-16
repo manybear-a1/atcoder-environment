@@ -1,0 +1,11 @@
+{
+  "augument sort": {
+    "prefix": "augument sort",
+    "body": [
+      "sort(xy.begin(), xy.end(), [](const auto &p1, const auto &p2) {",
+      "  return atan2l(p1.second, p1.first) < atan2l(p2.second, p2.first);",
+      "});"
+    ],
+    "description": "augument sort"
+  }
+}

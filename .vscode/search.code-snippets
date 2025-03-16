@@ -1,0 +1,50 @@
+{
+  "permutation": {
+    "description": "template for permutation",
+    "prefix": "permutation",
+    "body": [
+      "vector<int> permutation(N);",
+      "// 初期化(0, 1, 2, ... , N-1)",
+      "iota(all(permutation), 0);",
+      "// sort(all(permutation));",
+      "ll ans = INF;",
+      "do",
+      "{",
+      "  $1",
+      "} while (next_permutation(all(permutation)));"
+    ]
+  },
+  "bit": {
+    "description": "template for bit-search",
+    "prefix": "bit-search",
+    "body": [
+      "rep(i, 1 << ${1:N})",
+      "{",
+      "  // 最大30bitのbit全探索",
+      "  bitset<30> bs(i);",
+      "  /*各bit集合内で必要な初期化*/",
+      "  ",
+      "  rep(j, ${1:N})",
+      "  {",
+      "    if (bs.test(j))",
+      "    {",
+      "      /*立っているbit毎の処理*/",
+      "      ",
+      "    }else{",
+      "      /*立っていないbit毎の処理*/",
+      "      ",
+      "    }",
+      "  }",
+      "  /*各bit集合内で必要な処理*/",
+      "  ",
+      "}"
+    ]
+  },
+  "dx-dy": {
+    "prefix": "dx, dy",
+    "body": [
+      "vc<ll> dx = { 1,0,-1,0 };//vc<ll> dx={1,1,0,-1,-1,-1,0,1};",
+      "vc<ll> dy = { 0,1,0,-1 };//vc<ll> dy={0,1,1,1,0,-1,-1,-1};"
+    ]
+  }
+}
