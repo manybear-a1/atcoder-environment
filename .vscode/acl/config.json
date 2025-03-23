@@ -1,0 +1,8 @@
+{
+	"oj-path": "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\oj.exe",
+	"default-contest-dirname-format": "{ContestID}",
+	"default-task-dirname-format": "{tasklabel}",
+	"default-test-dirname-format": "test",
+	"default-task-choice": "inquire",
+	"default-template": "atcoder-c++"
+}
