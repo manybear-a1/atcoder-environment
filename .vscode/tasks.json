@@ -71,7 +71,11 @@
         "-Wextra",
         //"-fanalyzer",
         "-Wanalyzer-shift-count-negative",
+        "-Winvalid-pch",
+        "-ftrapv",
         "-Wanalyzer-shift-count-overflow",
+        //ref:https://usaco.guide/general/running-code-locally?lang=cpp
+        // "-D_GLIBCXX_DEBUG",
       ],
       "options": {
         "cwd": "${fileDirname}"
@@ -110,12 +114,12 @@
     {
       "type": "shell",
       "label": "Test-c++",
-      "command": "oj t -c \"${fileDirname}\\${fileBasenameNoExtension}.exe\" -d \"${fileDirname}\\tests\"",
+      "command": "oj t -c \"${fileDirname}\\${fileBasenameNoExtension}.exe\" -d \"${fileDirname}\\test\"",
     },
     {
       "type": "shell",
       "label": "Test-custom-c++",
-      "command": "oj t -c \"${fileDirname}\\${fileBasenameNoExtension}.exe\" -d \"${fileDirname}\\tests\" --judge-command \"${fileDirname}/judge.exe\"",
+      "command": "oj t -c \"${fileDirname}\\${fileBasenameNoExtension}.exe\" -d \"${fileDirname}\\test\" --judge-command \"${fileDirname}/judge.exe\"",
     },
     {
       "label": "Run-c++",

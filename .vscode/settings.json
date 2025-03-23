@@ -124,7 +124,9 @@
     "internal_bit": "cpp",
     "scc": "cpp",
     "twosat": "cpp",
-    "math": "cpp"
+    "math": "cpp",
+    "dsu": "cpp",
+    "convolution": "cpp"
   },
   "cSpell.words": [
     "Chebyshev",
