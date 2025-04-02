@@ -2,6 +2,7 @@
   "timer": {
     "prefix": "timer",
     "body": [
+      "//ref:https://qiita.com/sorachandu/items/041169d34b9f9b99bcf7#timer-%E6%99%82%E9%96%93%E8%A8%88%E6%B8%AC%E7%94%A8class",
       "// std::chronoを利用した時間計測用クラス",
       "class Timer{",
       "  chrono::system_clock::time_point start;",
@@ -24,6 +25,7 @@
   "random": {
     "prefix": "random",
     "body": [
+      "//ref:https://qiita.com/sorachandu/items/041169d34b9f9b99bcf7#timer-%E6%99%82%E9%96%93%E8%A8%88%E6%B8%AC%E7%94%A8class",
       "// std::uniform_int_distributionを利用した一様乱数生成クラス",
       "class Random_Gen{",
       //"  random_device seed_gen;",
@@ -650,11 +652,9 @@
       "  void sa() {",
       "      State state;",
       "      init(state);",
-      "      double start_temp, end_temp; // 適当な値を入れる（後述）",
-      "      double start_time; // 開始時刻",
-      "      while (true) { // 時間の許す限り回す",
-      "          double now_time; // 現在時刻",
-      "          if (now_time - start_time > TIME_LIMIT) break;",
+      "      double start_temp = 50, end_temp = 10; // 適当な値を入れる（後述）",
+      "      while (true) { // 時間の許す限り回す(timerライブラリを使用)",
+      "          if (!timer.is_under(TIME_LIMIT)) break;",
       "  ",
       "          State new_state = state;",
       "          modify(new_state);",
@@ -662,7 +662,7 @@
       "          int pre_score = calc_score(state);",
       "  ",
       "          // 温度関数",
-      "          double temp = start_temp + (end_temp - start_temp) * (now_time-start_time) / TIME_LIMIT;",
+      "          double temp = start_temp + (end_temp - start_temp) * (timer.count()) / TIME_LIMIT;",
       "          // 遷移確率関数(最大化の場合)",
       "          double prob = exp((new_score-pre_score)/temp);",
       "  ",
