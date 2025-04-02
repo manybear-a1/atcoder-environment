@@ -126,7 +126,8 @@
     "twosat": "cpp",
     "math": "cpp",
     "dsu": "cpp",
-    "convolution": "cpp"
+    "convolution": "cpp",
+    "internal_queue": "cpp"
   },
   "cSpell.words": [
     "Chebyshev",
@@ -138,5 +139,6 @@
   "[cpp]": {
     "files.encoding": "utf8bom"
   },
-  "github.copilot.editor.enableAutoCompletions": true
+  "github.copilot.editor.enableAutoCompletions": true,
+  "C_Cpp.default.intelliSenseMode": "windows-gcc-x64"
 }
