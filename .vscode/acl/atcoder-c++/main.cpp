@@ -1,9 +1,11 @@
-﻿#ifndef ONLINE_JUDGE
-#define _GLIBCXX_DEBUG 1 //[]で配列外参照をするとエラーにしてくれる。上下のやつがないとTLEになるので注意 ABC311Eのサンプル4みたいなデバック中のTLEは防げないので注意
-#endif
+// #ifndef ONLINE_JUDGE
+// #define _GLIBCXX_DEBUG 1 //[]で配列外参照をするとエラーにしてくれる。上下のやつがないとTLEになるので注意 ABC311Eのサンプル4みたいなデバック中のTLEは防げないので注意
+// #endif
 #include <bits/stdc++.h>
 
+#ifdef ONLINE_JUDGE
 #include <atcoder/all>
+#endif
 using namespace atcoder;
 
 using namespace std;
@@ -42,13 +44,13 @@ using vc = vector<T>;
 template <class T>
 istream &operator>>(istream &i, vc<T> &v)
 {
-  rep(j, size(v)) i >> v[j];
+  rep(j, (ll)size(v)) i >> v[j];
   return i;
 }
 template <class T>
 ostream &operator<<(ostream &o, const vc<T> &v)
 {
-  rep(j, size(v))
+  rep(j, (ll)size(v))
   {
     if (j)
       o << " ";
