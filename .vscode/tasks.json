@@ -74,6 +74,7 @@
         "-Winvalid-pch",
         "-ftrapv",
         "-Wanalyzer-shift-count-overflow",
+        "-fconstexpr-depth=2147483647",
         //ref:https://usaco.guide/general/running-code-locally?lang=cpp
         "-D",
         "_GLIBCXX_DEBUG",
@@ -109,6 +110,7 @@
         "-Wanalyzer-shift-count-negative",
         "-Winvalid-pch",
         "-ftrapv",
+        "-fconstexpr-depth=2147483647",
         "-Wanalyzer-shift-count-overflow",
         //ref:https://usaco.guide/general/running-code-locally?lang=cpp
         "-D",
