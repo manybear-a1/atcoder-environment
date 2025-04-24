@@ -10,6 +10,7 @@ using namespace atcoder;
 
 using namespace std;
 using ll = long long;
+using ld = long double;
 ll INF = 2e18;
 using P = pair<ll, ll>;
 #define pb push_back
