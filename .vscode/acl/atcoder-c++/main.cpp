@@ -1,11 +1,12 @@
 // #ifndef ONLINE_JUDGE
 // #define _GLIBCXX_DEBUG 1 //[]で配列外参照をするとエラーにしてくれる。上下のやつがないとTLEになるので注意 ABC311Eのサンプル4みたいなデバック中のTLEは防げないので注意
 // #endif
-#include <bits/stdc++.h>
 
 #ifdef ONLINE_JUDGE
+#define NDEBUG
 #include <atcoder/all>
 #endif
+#include <bits/stdc++.h>
 using namespace atcoder;
 
 using namespace std;
