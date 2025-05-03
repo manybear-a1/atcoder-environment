@@ -68,6 +68,7 @@
         "-W",
         "-Wall",
         "-Werror=shadow",
+        "-Werror=return-type",
         "-Wextra",
         //"-fanalyzer",
         "-Wanalyzer-shift-count-negative",
