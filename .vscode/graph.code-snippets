@@ -118,7 +118,7 @@
       "};",
       "using Edges = vector<Edge>;",
       "//const ll INF = 1LL << 60;",
-      "/* bellman_ford(Es,s,t,dis)",
+      "/* bellman_ford(Es,V,s,dis)",
       "  入力: 全ての辺Es, 頂点数V, 開始点 s, 最短経路を記録するdis",
       "  出力: 負の閉路が存在するなら true",
       "  計算量：O(|E||V|)",
