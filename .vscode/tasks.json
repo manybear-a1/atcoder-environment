@@ -11,7 +11,7 @@
         "/Fe:",
         "${fileDirname}\\${fileBasenameNoExtension}.exe",
         "${file}",
-        "/std:c++20",
+        "/std:c++23",
         "/Wall",
         // "/wd5045",
         // "/wd4515",
@@ -20,7 +20,8 @@
         "/wd5045",
         "/wd4820",
         "/wd4514",
-
+        "-I",
+        "\"D:\\atcoder\\ac-library\"",
         "/wd4018",
         "/wd4267",
         "/we4456",
@@ -62,9 +63,9 @@
         "${file}",
         "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe",
-        // "-I",
-        // "\"D:\\atcoder\\ac-library\"",
-        "-std=c++20",
+        "-I",
+        "\"D:\\atcoder\\ac-library\"",
+        "-std=c++23",
         "-W",
         "-Wall",
         "-Werror=shadow",
@@ -77,6 +78,7 @@
         "-Wanalyzer-shift-count-overflow",
         "-fconstexpr-depth=2147483647",
         //ref:https://usaco.guide/general/running-code-locally?lang=cpp
+        //C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/stdc++.h
         "-D",
         "_GLIBCXX_DEBUG",
       ],
@@ -113,7 +115,10 @@
         "-ftrapv",
         "-fconstexpr-depth=2147483647",
         "-Wanalyzer-shift-count-overflow",
+        //Do not forget to edit the bits/stdc++.h to include the ac-library
         //ref:https://usaco.guide/general/running-code-locally?lang=cpp
+        //C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/stdc++.h
+        // g++ -I "D:/atcoder/ac-library" -g "C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/stdc++.h"   -std=c++23 -W -Wall -Werror=shadow -Werror=return-type -Wextra -Wanalyzer-shift-count-negative -Winvalid-pch -ftrapv -Wanalyzer-shift-count-overflow -fconstexpr-depth=2147483647 -D _GLIBCXX_DEBUG
         "-D",
         "ONLINE_JUDGE",
       ],
@@ -140,7 +145,7 @@
     {
       "label": "Run-python",
       "type": "shell",
-      "command": "oj t -c \"python ${file}\" -d \"${fileDirname}\\tests\"",
+      "command": "oj t -c \"python ${file}\" -d \"${fileDirname}\\test\"",
       "options": {
         "shell": {
           "executable": "cmd",
