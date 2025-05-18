@@ -4,10 +4,14 @@
   // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-
-
-
-
+    {
+      "name": "Python optuna",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${fileBasename}",
+      "cwd": "${fileDirname}",
+      "console": "integratedTerminal"
+    },
     {
       "name": "Python デバッガー: 引数を含む現在のファイル",
       "type": "debugpy",

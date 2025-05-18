@@ -1,0 +1,1 @@
+score = 0のとき、pahcerは問答無用でWrong Answerと判定するので、それが望ましくない場合は、vis.rsを編集してスコアを正にする。

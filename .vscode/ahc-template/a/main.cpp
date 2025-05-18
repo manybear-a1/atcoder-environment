@@ -1,6 +1,5 @@
-// #ifndef ONLINE_JUDGE
-// #define _GLIBCXX_DEBUG 1 //[]で配列外参照をするとエラーにしてくれる。上下のやつがないとTLEになるので注意 ABC311Eのサンプル4みたいなデバック中のTLEは防げないので注意
-// #endif
+// Template for competitive programming (atcoder heuristic contest)
+// this template is only for marathon problems. not for long term use.
 #ifdef ONLINE_JUDGE
 #define NDEBUG
 #include <atcoder/all>
@@ -35,9 +34,6 @@ inline bool chmax(T &a, const T &b)
 }
 template <typename T>
 inline T ceil(T a, T b) { return (a + (b - 1)) / b; }
-using mint = modint998244353;
-// using mint = modint1000000007;
-// using mint = static_modint<10>;//使うときはコメントアウトを外す
 template <typename T>
 using vc = vector<T>;
 template <class T>
@@ -58,8 +54,6 @@ ostream &operator<<(ostream &o, const vc<T> &v)
   o << endl;
   return o;
 }
-// ref:https://qiita.com/sorachandu/items/041169d34b9f9b99bcf7#timer-%E6%99%82%E9%96%93%E8%A8%88%E6%B8%AC%E7%94%A8class
-//  std::chronoを利用した時間計測用クラス
 class Timer
 {
   chrono::system_clock::time_point start;
@@ -79,35 +73,31 @@ public:
   }
 };
 Timer timer;
-// ref:https://qiita.com/sorachandu/items/041169d34b9f9b99bcf7#timer-%E6%99%82%E9%96%93%E8%A8%88%E6%B8%AC%E7%94%A8class
-//  std::uniform_int_distributionを利用した一様乱数生成クラス
 class Random_Gen
 {
   mt19937 engine;
   uniform_int_distribution<int64_t> dist;
 
 public:
-  // Constructor [l,r]で生成する値の範囲を指定
-  Random_Gen() : engine(0) {}
-  Random_Gen(int64_t l, int64_t r) : engine(0), dist(l, r) {}
+  Random_Gen(int seed = 0) : engine(seed) {}
+  Random_Gen(int64_t l, int64_t r, int seed = 0) : engine(seed), dist(l, r) {}
 
-  // 現在の生成する値の範囲をstd::pairで返す
   pair<int64_t, int64_t> get_range()
   {
     return make_pair(dist.min(), dist.max());
   }
-  // 生成する値の範囲を[l,r]に変更する
   void set_range(int64_t l, int64_t r)
   {
     uniform_int_distribution<int64_t>::param_type Param(l, r);
     dist.param(Param);
   }
-  // [l,r]内の一様分布の整数を返す
-  int64_t gen()
+  // Generate a random double in [l, r)
+  double rand_double(double l, double r)
   {
-    return dist(engine);
+    std::uniform_real_distribution<double> d(l, r);
+    return d(engine);
   }
-  int64_t operator()() { return gen(); }
+  int64_t operator()() { return dist(engine); }
 };
 // for interactive problems
 #ifdef _GLIBCXX_DEBUG
@@ -128,11 +118,17 @@ void query(vc<int> &v)
   cin.rdbuf(iss.rdbuf());
 #endif
 }
+// TODO:Store input data here in global variables
+// int N;
+// vc<int> A;
 struct Action
 {
+  // TODO: implement here for individual problem
+  //  int data;
   friend ostream &operator<<(ostream &o, const Action &a)
   {
-    // o << "\n";
+    static_assert(false, "Action::operator<<() not implemented!");
+    // o << data << "\n";
     return o;
   }
 };
@@ -140,18 +136,34 @@ class State
 {
 public:
   vc<Action> actions;
-  int calc_score()
+  // only for beam search
+  int hash = 0;
+
+  int calc_score() const
   {
-    return 0;
+    // TODO: implement here for individual problem
+    static_assert(false, "State::calc_score() not implemented!");
+    int score = 0;
+    return score;
   }
+  // TODO: Implement output format for each problem
   friend ostream &operator<<(ostream &o, const State &state)
   {
+    // Example: output number of actions, then each action
     o << state.actions.size() << endl;
     rep(i, state.actions.size())
     {
       o << state.actions[i];
     }
     return o;
+  }
+  friend bool operator<(const State &a, const State &b)
+  {
+    return a.calc_score() < b.calc_score();
+  }
+  friend bool operator>(const State &a, const State &b)
+  {
+    return a.calc_score() > b.calc_score();
   }
 };
 class Greedy
@@ -160,17 +172,18 @@ public:
   State solve_all()
   {
     State state;
-    solve_partial(state);
+    rep(i, 100)
+        solve_partial(state);
     solved_state = state;
-    return state;
+    return solved_state;
   }
-  // 部分問題を解く。
-  // そのままビームサーチや焼きなましに使えるように作る
-  void solve_partial(State &state)
+  void solve_partial(State &state, int seed = 0 /*If you are going to use beam search, don't make this method deterministic.*/)
   {
+    // implement greedy algorithm here
+    static_assert(false, "Greedy::solve_partial() not implemented!");
     return;
   }
-  const State &get_solved_state()
+  const State &get_solved_state() const
   {
     return solved_state;
   }
@@ -182,29 +195,32 @@ private:
 class SimulatedAnnealing
 {
 public:
-  // 自動で貪欲法による初期解を生成します。
-  SimulatedAnnealing(Greedy &greedy)
+  SimulatedAnnealing(Greedy &greedy_)
   {
-    this->greedy = greedy;
+    this->greedy = greedy_;
     this->greedy.solve_all();
     this->solved_state = this->greedy.get_solved_state();
   }
   State simulate()
   {
-    double TIME_LIMIT = 1.8; // 制限時間
+    double TIME_LIMIT = 1.8;
 #ifdef _GLIBCXX_DEBUG
     TIME_LIMIT = 9.0;
+    // debug output config
+    // max files to output
     int max_files = 10;
+    // interval for debug output
     int interval = 1;
 #endif
 #ifndef ONLINE_JUDGE
     TIME_LIMIT = 4.0;
+    // statistics for debug
     int count_loop = 0;
     int count_accepted = 0;
 #endif
-    double start_temp = 50, end_temp = 10; // 適当な値を入れる（後述）
+    double start_temp = 50, end_temp = 10;
     while (true)
-    { // 時間の許す限り回す(timerライブラリを使用)
+    {
       if (!timer.is_under(TIME_LIMIT))
         break;
 
@@ -212,11 +228,12 @@ public:
       modify(new_state);
       int new_score = new_state.calc_score();
       int pre_score = this->solved_state.calc_score();
+      int diff = new_score - pre_score; // diff = modify(new_state);
 
-      // 温度関数
+      // temperature
       double temp = start_temp + (end_temp - start_temp) * (timer.count()) / TIME_LIMIT;
-      // 遷移確率関数(最大化の場合)
-      double prob = exp((new_score - pre_score) / temp);
+      // probability
+      double prob = exp((diff) / temp);
 #ifndef ONLINE_JUDGE
       count_loop++;
 #endif
@@ -231,16 +248,24 @@ public:
       }
 #endif
       if (prob > (rand() % INF) / (double)min(RAND_MAX, INF))
-      { // 確率probで遷移する
+      {
+
         this->solved_state = new_state;
 #ifndef ONLINE_JUDGE
         count_accepted++;
 #endif
       }
+      else
+      {
+        // modify(new_state);
+      }
     }
 #ifndef ONLINE_JUDGE
     cerr << "l/a" << " " << count_loop << " " << count_accepted << endl;
-    cerr << double(count_loop) / (double)count_accepted << endl;
+    if (count_accepted != 0)
+      cerr << "accept rate" << " " << double(count_accepted) / (double)count_loop << endl;
+    else
+      cerr << "accept rate" << " " << 0.0 << endl;
 #endif
     return this->solved_state;
   }
@@ -250,52 +275,112 @@ private:
   State solved_state;
   void modify(State &state)
   {
-    // ここに焼きなましの操作を実装する
+    assert(false && "SimulatedAnnealing::modify() not implemented!");
     return;
   }
 };
 class BeamSearch
 {
-  // TODO:いつか実装する
 public:
-  BeamSearch(Greedy &greedy, int beam_width) : greedy(greedy), beam_width(beam_width)
+  BeamSearch(Greedy &greedy_, int beam_width_) : greedy(greedy_), beam_width(beam_width_)
   {
-    // 初期解を生成
-    nodes.resize(beam_width);
   }
-  State search() {}
+
+  State search()
+  {
+    // 1. create initial state
+    State initial;
+    vector<State> current_beam = {initial};
+
+    int max_steps = 100;
+    for (int step = 0; step < max_steps; ++step)
+    {
+      vector<State> next_candidates;
+      unordered_set<int> seen_hashes;
+
+      // 2. expand each state in the current beam
+      for (const State &state : current_beam)
+      {
+        // 3. generate next states
+        for (int seed = 0; seed < 5; ++seed)
+        {
+          State next = state;
+
+          // TODO: implement the logic to generate next states
+          greedy.solve_partial(next, seed);
+
+          // Remove duplicate states by hash
+          if (seen_hashes.count(next.hash))
+            continue;
+          seen_hashes.insert(next.hash);
+          next_candidates.push_back(next);
+        }
+      }
+
+      // 4. prune the next candidates to keep only the best ones
+      if (next_candidates.empty())
+      {
+        assert(false && "next_candidates is empty");
+      }
+      partial_sort(next_candidates.begin(), next_candidates.begin() + min(beam_width, (int)next_candidates.size()), next_candidates.end(), greater<>());
+
+      if ((int)next_candidates.size() > beam_width)
+        next_candidates.resize(beam_width);
+
+      current_beam = next_candidates;
+    }
+
+    // 4. return the best state from the current beam
+    return *max_element(current_beam.begin(), current_beam.end(), [](const State &a, const State &b)
+                        { return a.calc_score() < b.calc_score(); });
+  }
 
 private:
   Greedy greedy;
   int beam_width;
-  vc<State> nodes;
 };
+#ifdef _GLIBCXX_DEBUG
+class OStreamRedirect
+{
+  std::ostream &os;
+  std::streambuf *old_buf;
+
+public:
+  OStreamRedirect(std::ostream &os_, std::ostream &new_stream)
+      : os(os_), old_buf(os_.rdbuf(new_stream.rdbuf())) {}
+  ~OStreamRedirect()
+  {
+    os.rdbuf(old_buf);
+  }
+};
+#endif
 int main()
 {
-  // TODO:テンプレートのデバッグ
   cin.tie(nullptr);
   ios_base::sync_with_stdio(false);
   // ref:https://rsk0315.hatenablog.com/entry/2020/05/09/170315
-  cin; // Input here!
 
-  timer = Timer();
 #ifdef _GLIBCXX_DEBUG
   ofstream coutdbg("output.txt");
-  flush(cout);
-  cout.close();
-  cout.rdbuf(coutdbg.rdbuf());
+  OStreamRedirect redirect_cout(cout, coutdbg);
 #endif
-  // 貪欲法
+  // Receive inputs here
+  // cin >> N;
+  // A.resize(N);
+  // cin >> A;
+
+  timer = Timer();
+  // greedy
   Greedy greedy;
   State state = greedy.solve_all();
 
-  // 焼きなまし
+  // Simulated Annealing
   // Greedy greedy;
   // SimulatedAnnealing sa(greedy);
   // State state = sa.simulate();
   //
 
-  // ビームサーチ
+  //  Beam Search
   //  Greedy greedy;
   //  BeamSearch beam_search(greedy, 10);
   //  State state = beam_search.search();
@@ -303,15 +388,12 @@ int main()
 #ifdef _GLIBCXX_DEBUG
   ofstream coutgreedy("greedy_output.txt");
   coutgreedy << state;
-  coutgreedy.close();
+  flush(coutgreedy);
 #endif
   // cout << state.actions.size() << endl;
-
+  // TODO: check the output format of the problem.
   cout << state;
   flush(cout);
-#ifdef _GLIBCXX_DEBUG
-  coutdbg.close();
-#endif
   //  cout << ans << endl;
   return 0;
 }
