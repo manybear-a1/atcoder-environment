@@ -189,7 +189,6 @@ public:
   }
 
 private:
-  Random_Gen rand_greedy;
   State solved_state;
 };
 class SimulatedAnnealing
@@ -203,7 +202,7 @@ public:
   }
   State simulate()
   {
-    double TIME_LIMIT = 1.8;
+    double TIME_LIMIT = 1.9;
 #ifdef _GLIBCXX_DEBUG
     TIME_LIMIT = 9.0;
     // debug output config
@@ -213,10 +212,14 @@ public:
     int interval = 1;
 #endif
 #ifndef ONLINE_JUDGE
+#ifndef _GLIBCXX_DEBUG
     TIME_LIMIT = 4.0;
+#endif
     // statistics for debug
     int count_loop = 0;
     int count_accepted = 0;
+    cerr << "score before SA:" << this->solved_state.calc_score() << endl;
+    cerr << "state before SA:" << this->solved_state << endl;
 #endif
     double start_temp = 50, end_temp = 10;
     while (true)
@@ -247,7 +250,8 @@ public:
         ofs << this->solved_state;
       }
 #endif
-      if (prob > (rand() % INF) / (double)min(RAND_MAX, INF))
+      if (prob > rand_SA.rand_double(0, 1))
+
       {
 
         this->solved_state = new_state;
@@ -266,6 +270,8 @@ public:
       cerr << "accept rate" << " " << double(count_accepted) / (double)count_loop << endl;
     else
       cerr << "accept rate" << " " << 0.0 << endl;
+    cerr << "score after SA:" << this->solved_state.calc_score() << endl;
+    cerr << "state after SA:" << this->solved_state << endl;
 #endif
     return this->solved_state;
   }
@@ -273,6 +279,7 @@ public:
 private:
   Greedy greedy;
   State solved_state;
+  Random_Gen rand_SA;
   void modify(State &state)
   {
     assert(false && "SimulatedAnnealing::modify() not implemented!");
