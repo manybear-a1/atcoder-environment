@@ -61,11 +61,15 @@ ostream &operator<<(ostream &o, const vc<T> &v)
   o << endl;
   return o;
 }
+void solve()
+{
+  //  cout << ans << endl;
+}
 int main()
 {
   cin.tie(nullptr);
   ios_base::sync_with_stdio(false);
   // ref:https://rsk0315.hatenablog.com/entry/2020/05/09/170315
-  //  cout << ans << endl;
+  solve();
   return 0;
 }
