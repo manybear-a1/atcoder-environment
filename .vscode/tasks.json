@@ -65,6 +65,8 @@
         "${fileDirname}\\${fileBasenameNoExtension}.exe",
         "-I",
         "\"D:\\atcoder\\ac-library\"",
+        "-I",
+        "\"D:\\boost_1_88_0\"",
         "-std=c++23",
         "-W",
         "-Wall",
