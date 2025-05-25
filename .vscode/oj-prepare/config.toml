@@ -1,0 +1,7 @@
+contest_directory = "./{contest_id}/{problem_id}"
+problem_directory = "."
+
+[templates]
+"main.cpp" = "D:/atcoder/.vscode/oj-prepare/main.cpp"
+"naive.cpp" = "D:/atcoder/.vscode/oj-prepare/main.cpp"
+"generate.cpp" = "D:/atcoder/.vscode/oj-prepare/generate.cpp"

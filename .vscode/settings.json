@@ -127,7 +127,9 @@
     "math": "cpp",
     "dsu": "cpp",
     "convolution": "cpp",
-    "internal_queue": "cpp"
+    "internal_queue": "cpp",
+    "execution": "cpp",
+    "strstream": "cpp"
   },
   "cSpell.words": [
     "Chebyshev",

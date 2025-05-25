@@ -58,7 +58,7 @@
         }
       ],
       "preLaunchTask": "C/C++: g++.exe build active file (GCC)",
-      "postDebugTask": "Test-c++"
+      //"postDebugTask": "Test-c++"
     }
   ],
 }
