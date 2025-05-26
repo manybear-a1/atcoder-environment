@@ -282,6 +282,10 @@
       "type": "shell",
       "label": "Test-custom-c++",
       "command": "oj t -c \"${fileDirname}\\${fileBasenameNoExtension}.exe\" -d \"${fileDirname}\\test\" --judge-command \"${fileDirname}/judge.exe\"",
+      "detail": "The judge program must be named judge.exe and placed in the same directory as the main program.",
+      "dependsOn": [
+        "C/C++: g++.exe build active file (GCC)",
+      ],
     },
     {
       "label": "Run_with_error_py",
