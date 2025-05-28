@@ -3,5 +3,5 @@ problem_directory = "."
 
 [templates]
 "main.cpp" = "D:/atcoder/.vscode/oj-prepare/main.cpp"
-"naive.cpp" = "D:/atcoder/.vscode/oj-prepare/main.cpp"
+"naive.cpp" = "D:/atcoder/.vscode/oj-prepare/naive.cpp"
 "generate.cpp" = "D:/atcoder/.vscode/oj-prepare/generate.cpp"
