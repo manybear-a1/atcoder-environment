@@ -30,8 +30,7 @@
         }
         hook.register_filter_command(["clang-format", "--style", json.dumps(format_config)], data=data)
 %>\
-// usage: $ oj generate-input ./generate
-// usage: $ oj generate-input --hack-actual=./a.out --hack-expected=./naive ./generate
+// Task: oj generate random test
 int main()
 {
   cin.tie(nullptr);
