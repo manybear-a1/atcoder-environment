@@ -249,6 +249,14 @@
       ]
     },
     {
+      "label": "delete random test",
+      "type": "shell",
+      "command": "rm -r ./log; rm ./test/random* ",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+    },
+    {
       "label": "Run-python",
       "type": "shell",
       "command": "oj t -c \"python ${file}\" -d \"${fileDirname}\\test\"",
