@@ -142,5 +142,6 @@
     "files.encoding": "utf8bom"
   },
   "github.copilot.editor.enableAutoCompletions": true,
-  "C_Cpp.default.intelliSenseMode": "windows-gcc-x64"
+  "C_Cpp.default.intelliSenseMode": "windows-gcc-x64",
+  "chat.promptFiles": true,
 }
