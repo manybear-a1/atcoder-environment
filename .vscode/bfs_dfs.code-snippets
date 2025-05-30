@@ -181,7 +181,7 @@
   },
   "Complete Search with DFS and memoization": {
     "description": "Complete Search with DFS and memoization",
-    "prefix": "Complete Search",
+    "prefix": "complete search",
     "body": [
       "// A template for complete search with memoization and dfs.",
       "map<int64_t, int64_t> memo;",
