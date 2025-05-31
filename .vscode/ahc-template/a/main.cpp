@@ -401,6 +401,5 @@ int main()
   // TODO: check the output format of the problem.
   cout << state;
   flush(cout);
-  //  cout << ans << endl;
   return 0;
 }
