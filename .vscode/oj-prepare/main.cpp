@@ -86,7 +86,7 @@ ${cplusplus.write_output(data)}
 using namespace atcoder;
 
 using namespace std;
-using ll = int64_t;
+using ll = long long;
 using ld = long double;
 #define double ld
 ll INF = 2e18;
