@@ -92,10 +92,10 @@ using ld = long double;
 ll INF = 2e18;
 using P = pair<ll, ll>;
 #define pb push_back
-#define rep(i, n) for (ll i = 0; i < (n); i++)
-#define reprev(i, n) for (ll i = (n) - 1; i >= 0; i--)
-#define reps(i, n) for (ll i = 1; i <= (n); i++)
-#define for_(i, a, b) for (ll i = (a); i < (b); i++)
+#define rep(i, n) for (ll i = 0; i < (ll)(n); i++)
+#define reprev(i, n) for (ll i = (ll)(n) - 1; i >= 0; i--)
+#define reps(i, n) for (ll i = 1; i <= (ll)(n); i++)
+#define for_(i, a, b) for (ll i = (ll)(a); i < (ll)(b); i++)
 #define all(v) v.begin(), v.end()
 template <typename T>
 inline bool chmin(T &a, const T &b)
