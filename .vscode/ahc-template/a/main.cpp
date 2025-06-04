@@ -171,17 +171,19 @@ class Greedy
 public:
   State solve_all()
   {
-    State state;
+
     rep(i, 100)
-        solve_partial(state);
-    solved_state = state;
+    {
+      State state;
+      solved_state = solve_partial(state);
+    }
     return solved_state;
   }
-  void solve_partial(State &state, int seed = 0 /*If you are going to use beam search, don't make this method deterministic.*/)
+  State solve_partial(State &state, int seed = 0 /*If you are going to use beam search, don't make this method deterministic.*/)
   {
     // implement greedy algorithm here
     static_assert(false, "Greedy::solve_partial() not implemented!");
-    return;
+    return state;
   }
   const State &get_solved_state() const
   {
