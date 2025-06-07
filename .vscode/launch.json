@@ -13,7 +13,7 @@
       "console": "integratedTerminal"
     },
     {
-      "name": "Python デバッガー: 引数を含む現在のファイル",
+      "name": "Python test",
       "type": "debugpy",
       "request": "launch",
       "program": "${file}",
