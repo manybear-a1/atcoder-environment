@@ -245,8 +245,9 @@
       },
       "dependsOn": [
         "C/C++: g++.exe build generate file (GCC)",
-        "C/C++: g++.exe build naive file (GCC)"
-      ]
+        "C/C++: g++.exe build naive file (GCC)",
+      ],
+      "detail": "dependsOnのタスクはエラーで失敗しても（例えばコンパイルエラー）何も吐かないので注意。"
     },
     {
       "label": "delete random test",
