@@ -206,7 +206,7 @@ public:
   {
     double TIME_LIMIT = 1.9;
 #ifdef _GLIBCXX_DEBUG
-    TIME_LIMIT = 9.0;
+    TIME_LIMIT = 4.0;
     // debug output config
     // max files to output
     int max_files = 10;
