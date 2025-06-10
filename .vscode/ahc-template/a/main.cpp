@@ -73,31 +73,39 @@ public:
   }
 };
 Timer timer;
-class Random_Gen
-{
-  mt19937 engine;
-  uniform_int_distribution<int64_t> dist;
+//ref:https://qiita.com/sorachandu/items/041169d34b9f9b99bcf7#timer-%E6%99%82%E9%96%93%E8%A8%88%E6%B8%AC%E7%94%A8class
+// std::uniform_int_distributionを利用した一様乱数生成クラス
+//ref(窃盗先) :https://atcoder.jp/contests/ahc048/submissions/66624955
+class Random {
+ public:
+  Random() : state_(3141592653589793238ULL) {}
 
-public:
-  Random_Gen(int seed = 0) : engine(seed) {}
-  Random_Gen(int64_t l, int64_t r, int seed = 0) : engine(seed), dist(l, r) {}
+  double RandomDouble(double a, double b) {
+    Update();
+    const double r = state_ * kScale_;
+    return a + (b - a) * r;
+  }
 
-  pair<int64_t, int64_t> get_range()
-  {
-    return make_pair(dist.min(), dist.max());
+  int RandomInt(int a, int b) {
+    return static_cast<int>(RandomDouble(a, b));
   }
-  void set_range(int64_t l, int64_t r)
-  {
-    uniform_int_distribution<int64_t>::param_type Param(l, r);
-    dist.param(Param);
+
+  int RandomIntInclusive(int a, int b) {
+    return RandomInt(a, b + 1);
   }
-  // Generate a random double in [l, r)
-  double rand_double(double l, double r)
-  {
-    std::uniform_real_distribution<double> d(l, r);
-    return d(engine);
+
+ private:
+  uint64 state_;
+
+  // 2^(-64)
+  static constexpr double kScale_ = 1.0 / 18446744073709551616.0;
+
+  void Update() {
+    // xorshift
+    state_ ^= state_ >> 13;
+    state_ ^= state_ << 7;
+    state_ ^= state_ >> 17;
   }
-  int64_t operator()() { return dist(engine); }
 };
 // for interactive problems
 #ifdef _GLIBCXX_DEBUG
