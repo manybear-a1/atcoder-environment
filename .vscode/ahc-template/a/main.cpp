@@ -73,34 +73,39 @@ public:
   }
 };
 Timer timer;
-//ref:https://qiita.com/sorachandu/items/041169d34b9f9b99bcf7#timer-%E6%99%82%E9%96%93%E8%A8%88%E6%B8%AC%E7%94%A8class
-// std::uniform_int_distributionを利用した一様乱数生成クラス
-//ref(窃盗先) :https://atcoder.jp/contests/ahc048/submissions/66624955
-class Random {
- public:
+// ref:https://qiita.com/sorachandu/items/041169d34b9f9b99bcf7#timer-%E6%99%82%E9%96%93%E8%A8%88%E6%B8%AC%E7%94%A8class
+//  std::uniform_int_distributionを利用した一様乱数生成クラス
+// ref(窃盗先) :https://atcoder.jp/contests/ahc048/submissions/66624955
+class Random
+{
+public:
   Random() : state_(3141592653589793238ULL) {}
 
-  double RandomDouble(double a, double b) {
+  double RandomDouble(double a, double b)
+  {
     Update();
     const double r = state_ * kScale_;
     return a + (b - a) * r;
   }
 
-  int RandomInt(int a, int b) {
+  int RandomInt(int a, int b)
+  {
     return static_cast<int>(RandomDouble(a, b));
   }
 
-  int RandomIntInclusive(int a, int b) {
+  int RandomIntInclusive(int a, int b)
+  {
     return RandomInt(a, b + 1);
   }
 
- private:
+private:
   uint64 state_;
 
   // 2^(-64)
   static constexpr double kScale_ = 1.0 / 18446744073709551616.0;
 
-  void Update() {
+  void Update()
+  {
     // xorshift
     state_ ^= state_ >> 13;
     state_ ^= state_ << 7;
@@ -212,6 +217,7 @@ public:
   }
   State simulate()
   {
+    // 問題の制限時間を確認すること！！！
     double TIME_LIMIT = 1.9;
 #ifdef _GLIBCXX_DEBUG
     TIME_LIMIT = 4.0;
