@@ -1,0 +1,18 @@
+{
+  "Include G++ policy based data structures": {
+    "prefix": "include_policy_based_data_structures",
+    "body": [
+      "//ref:https://xuzijian629.hatenablog.com/entry/2018/12/01/000010",
+      "#include <ext/pb_ds/assoc_container.hpp>",
+      "#include <ext/pb_ds/tree_policy.hpp>",
+      "#include <ext/pb_ds/priority_queue.hpp>",
+      "using namespace __gnu_pbds;",
+      "//tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> s;",
+      "//set + get k-th element in O(log n)",
+      "",
+      "//gp_hash_table<int, int> m;",
+      "//faster unordered_map",
+    ],
+    "description": "Include G++ policy based data structures"
+  }
+}
