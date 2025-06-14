@@ -109,7 +109,7 @@
         "${fileDirname}\\${fileBasenameNoExtension}.exe",
         "-I",
         "\"D:\\atcoder\\ac-library\"",
-        "-std=c++20",
+        "-std=c++23",
         "-W",
         "-Wall",
         "-Werror=shadow",
