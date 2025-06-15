@@ -99,7 +99,7 @@ public:
   }
 
 private:
-  uint64 state_;
+  uint64_t state_;
 
   // 2^(-64)
   static constexpr double kScale_ = 1.0 / 18446744073709551616.0;
@@ -155,7 +155,7 @@ public:
   int calc_score() const
   {
     // TODO: implement here for individual problem
-    static_assert(false, "State::calc_score() not implemented!");
+    assert(false && "State::calc_score() not implemented!");
     int score = 0;
     return score;
   }
@@ -266,7 +266,7 @@ public:
         ofs << this->solved_state;
       }
 #endif
-      if (prob > rand_SA.rand_double(0, 1))
+      if (prob > rand_SA.RandomDouble(0, 1))
 
       {
 
@@ -295,7 +295,7 @@ public:
 private:
   Greedy greedy;
   State solved_state;
-  Random_Gen rand_SA;
+  Random rand_SA;
   void modify(State &state)
   {
     assert(false && "SimulatedAnnealing::modify() not implemented!");
