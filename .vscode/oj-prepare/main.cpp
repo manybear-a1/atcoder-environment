@@ -52,6 +52,9 @@ int main()
   ios_base::sync_with_stdio(false);
   cout << fixed << setprecision(15);
   // ref:https://rsk0315.hatenablog.com/entry/2020/05/09/170315
+  // ll T;
+  // cin >> T;
+  // rep(i, T)solve();
 ${cplusplus.read_input(data)}
   auto ${cplusplus.return_value(data)} = ${solve_function}(${cplusplus.actual_arguments(data)});
 ${cplusplus.write_output(data)}
