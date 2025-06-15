@@ -129,7 +129,10 @@
     "convolution": "cpp",
     "internal_queue": "cpp",
     "execution": "cpp",
-    "strstream": "cpp"
+    "strstream": "cpp",
+    "string_view": "cpp",
+    "generator": "cpp",
+    "text_encoding": "cpp"
   },
   "cSpell.words": [
     "Chebyshev",
