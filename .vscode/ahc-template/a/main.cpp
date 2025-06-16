@@ -238,6 +238,9 @@ public:
     cerr << "state before SA:" << this->solved_state << endl;
 #endif
     double start_temp = 50, end_temp = 10;
+    State now_state = this->solved_state;
+    int now_score = now_state.calc_score();
+    int best_score = now_score;
     while (true)
     {
       if (!timer.is_under(TIME_LIMIT))
@@ -246,8 +249,7 @@ public:
       State new_state = this->solved_state;
       modify(new_state);
       int new_score = new_state.calc_score();
-      int pre_score = this->solved_state.calc_score();
-      int diff = new_score - pre_score; // diff = modify(new_state);
+      int diff = new_score - now_score; // diff = modify(new_state);
 
       // temperature
       double temp = start_temp + (end_temp - start_temp) * (timer.count()) / TIME_LIMIT;
@@ -270,7 +272,13 @@ public:
 
       {
 
-        this->solved_state = new_state;
+        swap(now_state, new_state);
+        now_score = new_score;
+        if (new_score > best_score)
+        {
+          best_score = new_score;
+          this->solved_state = now_state;
+        }
 #ifndef ONLINE_JUDGE
         count_accepted++;
 #endif
@@ -286,8 +294,8 @@ public:
       cerr << "accept rate" << " " << double(count_accepted) / (double)count_loop << endl;
     else
       cerr << "accept rate" << " " << 0.0 << endl;
-    cerr << "score after SA:" << this->solved_state.calc_score() << endl;
-    cerr << "state after SA:" << this->solved_state << endl;
+    cerr << "score after SA:" << now_state.calc_score() << endl;
+    cerr << "state after SA:" << now_state << endl;
 #endif
     return this->solved_state;
   }
