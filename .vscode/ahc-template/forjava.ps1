@@ -1,5 +1,16 @@
 # compile all Java sources into Java 8 bytecode (class version 52.0)
 # https://atcoder.jp/contests/rco-contest-2019-qual/tasks/rco_contest_2019_qual_a
+# スコアの出力形式
+# score_regex = '(?m)^\s*score\s*:\s*(?P<score>\d+)\s*$'
+#
+# Run the visualizer to calculate the score
+#[[test.test_steps]]
+#program = "java"
+#args = [
+#    "Judge", 
+#    "./in/{SEED04}.txt",
+#    "./out/{SEED04}.txt",
+#]
 Set-Location .\2025\6\rco_contest_2019_qual_a\tools
 chcp 65001
 javac -encoding UTF-8 Generator.java --release 8
