@@ -178,6 +178,11 @@ public:
   {
     return a.calc_score() > b.calc_score();
   }
+  apply(int data)
+  {
+    actions.push_back({data});
+    // Update  if necessary
+  }
 };
 class Greedy
 {
