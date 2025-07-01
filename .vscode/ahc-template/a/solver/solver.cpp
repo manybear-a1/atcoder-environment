@@ -3,8 +3,8 @@
 #include "../util.cpp"
 #include "../state.cpp"
 #include "greedy.cpp"
-#include "simulated_annealing.cpp"
-#include "beam_search.cpp"
+// #include "simulated_annealing.cpp"
+// #include "beam_search.cpp"
 void solve()
 {
 

@@ -1,3 +1,5 @@
 score = 0のとき、pahcerは問答無用でWrong Answerと判定するので、それが望ましくない場合は、vis.rsを編集してスコアを正にする。
 toolsを持ってくる
 cd current-folder; pahcer run
+python ./a/combiner.py ./a/main.cpp combined.cpp
+Github Copilot にignoreされたフォルダを渡すにはドラッグして持っていくと渡せる
