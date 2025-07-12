@@ -4,6 +4,7 @@
 // TODO:Store input data here in global variables
 // int N;
 // vc<int> A;
+// you have to use extern to refer these variables;
 void input()
 {
   // cin >> N;
