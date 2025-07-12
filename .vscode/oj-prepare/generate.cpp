@@ -57,6 +57,7 @@ ${cplusplus.generate_input(data)}
 ${cplusplus.write_input(data)}
 
   // ofstream outputFile("./log/count.txt");
+  // count++;
   // if (outputFile.is_open())
   // {
   //   outputFile << count; // 実行回数をファイルに保存
