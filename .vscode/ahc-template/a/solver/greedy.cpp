@@ -2,7 +2,8 @@
 #include "../template.cpp"
 #include "../util.cpp"
 #include "../state.cpp"
-
+// extern int N;
+// extern vc<int>A;
 class Greedy
 {
 public:
