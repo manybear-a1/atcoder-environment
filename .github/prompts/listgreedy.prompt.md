@@ -1,0 +1,1 @@
+List possible greedy methods and compare them.
