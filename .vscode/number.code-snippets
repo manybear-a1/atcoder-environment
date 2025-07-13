@@ -384,5 +384,32 @@
       "  return ret;",
       "}"
     ]
+  },
+  "Radix Conversion": {
+    "description": "Radix Conversion(2-10進数の数値の文字列を処理する)",
+    "prefix": "Radix Conversion",
+    "body": [
+      "// 2-10進数の数値の文字列を処理する(16進非対応)",
+      "string encode_radix(ll val, ll radix)",
+      "{",
+      "  string res;",
+      "  while (val > 0)",
+      "  {",
+      "    res += (char)('0' + val % radix);",
+      "    val /= radix;",
+      "  }",
+      "  return res;",
+      "}",
+      "ll decode_radix(const string &s, ll radix)",
+      "{",
+      "  ll res = 0;",
+      "  for (char c : s)",
+      "  {",
+      "    res *= radix;",
+      "    res += c - '0';",
+      "  }",
+      "  return res;",
+      "}",
+    ]
   }
 }
