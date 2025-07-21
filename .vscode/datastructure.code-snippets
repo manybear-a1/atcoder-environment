@@ -213,7 +213,7 @@
       "        continue;",
       "      std::cout << \"[\" << p.first << \",\" << p.second << \"),\";",
       "    }",
-      "    std::cout << '\n';",
+      "    std::cout << '\\n';",
       "  }",
       "};",
     ]
