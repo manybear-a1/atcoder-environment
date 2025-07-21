@@ -416,6 +416,7 @@
     "description": "integer square root",
     "prefix": "isqrt",
     "body": [
+      "// sample: https://atcoder.jp/contests/abc230/submissions/67802776",
       "ll isqrt(ll x)",
       "{",
       "  ll l = 0, r = 1e9 + 1;",

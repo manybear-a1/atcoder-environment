@@ -222,6 +222,7 @@
     "description": "Interval class for range queries",
     "prefix": "Interval",
     "body": [
+      "// sample:https://atcoder.jp/contests/abc230/submissions/67802582",
       "struct Interval",
       "{",
       "  // Store the range [left, right]",
