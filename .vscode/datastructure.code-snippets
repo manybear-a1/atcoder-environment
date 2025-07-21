@@ -217,5 +217,31 @@
       "  }",
       "};",
     ]
+  },
+  "Interval": {
+    "description": "Interval class for range queries",
+    "prefix": "Interval",
+    "body": [
+      "struct Interval",
+      "{",
+      "  // Store the range [left, right]",
+      "  ll left, right;",
+      "  Interval(ll l, ll r) : left(l), right(r) {}",
+      "  bool contains(ll x) const { return left <= x && x <= right; }",
+      "  bool overlaps(const Interval &other) const",
+      "  {",
+      "    return max(left, other.left) <= min(right, other.right);",
+      "  }",
+      "  // sort by left endpoint",
+      "  // bool operator<(const Interval &other) const",
+      "  // {",
+      "  //   return left < other.left || (left == other.left && right < other.right);",
+      "  // }",
+      "  // sort by right endpoint",
+      "  bool operator<(const Interval &other) const",
+      "  {",
+      "    return right < other.right || (right == other.right && left < other.left);",
+      "  }",
+      "};", ]
   }
 }
