@@ -29,11 +29,11 @@ public:
   friend ostream &operator<<(ostream &o, const State &state)
   {
     // Example: output number of actions, then each action
-    o << state.actions.size() << endl;
-    rep(i, state.actions.size())
-    {
-      o << state.actions[i];
-    }
+    // o << state.actions.size() << endl;
+    // rep(i, state.actions.size())
+    // {
+    //   o << state.actions[i];
+    // }
     return o;
   }
   friend bool operator<(const State &a, const State &b)
@@ -44,7 +44,7 @@ public:
   {
     return a.calc_score() > b.calc_score();
   }
-  apply(int data)
+  void apply(int data)
   {
     actions.push_back({data});
     // Update  if necessary
