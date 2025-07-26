@@ -238,6 +238,7 @@
       "  }",
       "  return false;",
       "}",
+      "//ref:https://ei1333.github.io/algorithm/warshall-floyd.html",
       "/*",
       "  現在のグラフに無向辺を追加する。削除はできない。",
       "  計算量O(V^2)",
