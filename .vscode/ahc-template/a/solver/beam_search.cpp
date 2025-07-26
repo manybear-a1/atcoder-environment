@@ -51,4 +51,5 @@ public:
 private:
   Greedy greedy;
   int beam_width;
+  Random rand;
 };

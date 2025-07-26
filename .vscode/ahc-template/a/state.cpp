@@ -13,8 +13,10 @@ struct Action
 };
 class State
 {
-public:
+private:
   vc<Action> actions;
+
+public:
   // only for beam search
   int hash = 0;
 
@@ -22,7 +24,7 @@ public:
   {
     // TODO: implement here for individual problem
     assert(false && "State::calc_score() not implemented!");
-    int score = 0;
+    int score = -INF;
     return score;
   }
   // TODO: Implement output format for each problem

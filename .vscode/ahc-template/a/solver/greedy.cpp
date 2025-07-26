@@ -12,7 +12,8 @@ public:
     rep(i, 100)
     {
       State state;
-      solved_state = solve_partial(state);
+      state = solve_partial(state);
+      chmax(solved_state, state);
     }
     return solved_state;
   }
@@ -31,4 +32,5 @@ public:
 
 private:
   State solved_state;
+  Random rand;
 };
