@@ -398,6 +398,7 @@
       "    res += (char)('0' + val % radix);",
       "    val /= radix;",
       "  }",
+      "  reverse(res.begin(), res.end());",
       "  return res;",
       "}",
       "ll decode_radix(const string &s, ll radix)",
