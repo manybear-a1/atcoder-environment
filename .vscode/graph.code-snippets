@@ -247,6 +247,7 @@
       "void add_edge(vector<vector<ll>> &g, ll s, ll t, ll cost)",
       "{",
       "  g[s][t] = g[t][s] = min(g[s][t], cost);",
+      "  // 辺の追加により,s,tを含む場合は最短路が変わる可能性がある。またs,tを含まない時の最短路は変わらない。これよりワーシャルフロイド法における、新たに経由する頂点を追加するステップ(kのループ)をs,tの二回行えば十分であることが分かる。",
       "  for(ll k : {s, t}) {",
       "    for(ll i = 0; i < g.size(); i++) {",
       "      for(ll j = 0; j < g.size(); j++) {",
