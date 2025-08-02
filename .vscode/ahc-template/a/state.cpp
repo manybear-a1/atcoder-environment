@@ -36,6 +36,7 @@ public:
     // {
     //   o << state.actions[i];
     // }
+    static_assert(false, "State::operator<<() not implemented!");
     return o;
   }
   friend bool operator<(const State &a, const State &b)
