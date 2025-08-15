@@ -33,4 +33,6 @@ public:
 private:
   State solved_state;
   Random rand;
+  Timer timer;
+  mt19937 rng_shuffle;
 };
