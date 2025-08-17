@@ -45,6 +45,11 @@ ${cplusplus.return_type(data)} solve(${cplusplus.formal_arguments(data)}) {
   // 問題の答え以外の情報を保存したいとき用
   // ofstream outputFile;
   // {
+  // // Create log directory if it doesn't exist
+  // if (!filesystem::exists("./log"))
+  // {
+  //   filesystem::create_directory("./log");
+  // }
   //   int count = 0;
   //   string name = "./log/detail0.txt";
   //   while (filesystem::is_regular_file(name))
@@ -58,6 +63,11 @@ ${cplusplus.return_type(data)} solve(${cplusplus.formal_arguments(data)}) {
   //     }
   //   }
   //   outputFile.open(name);
+  //   // Check if file was opened successfully
+  // if (!outputFile.is_open())
+  // {
+  //   cerr << "Failed to open file: " << name << endl;
+  // }
   // }
   // TODO: edit here
 

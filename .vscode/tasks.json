@@ -277,7 +277,7 @@
     {
       "type": "shell",
       "label": "Test-c++",
-      "command": "oj t -c \"${fileDirname}\\${fileBasenameNoExtension}.exe\" -d \"${fileDirname}\\test\"",
+      "command": "cd \"${fileDirname}\" ; oj t -c \"${fileBasenameNoExtension}.exe\" -d \"${fileDirname}\\test\"",
       "dependsOn": [
         "C/C++: g++.exe build active file (GCC)",
       ],
@@ -285,7 +285,8 @@
     {
       "type": "shell",
       "label": "Test-c++ with error",
-      "command": "oj t -c \"${fileDirname}\\${fileBasenameNoExtension}.exe\" -d \"${fileDirname}\\test\" -e \"${input:error}\"",
+      "command": "cd \"${fileDirname}\" ; oj t -c \"${fileBasenameNoExtension}.exe\" -d \"${fileDirname}\\test\" -e \"1e-${input:error}\"",
+      "detail": "The error value is used to set the error threshold for the test cases. input format is 1e-{input}",
       "dependsOn": [
         "C/C++: g++.exe build active file (GCC)",
       ],
@@ -293,7 +294,7 @@
     {
       "type": "shell",
       "label": "Test-custom-c++",
-      "command": "oj t -c \"${fileDirname}\\${fileBasenameNoExtension}.exe\" -d \"${fileDirname}\\test\" --judge-command \"${fileDirname}/judge.exe\"",
+      "command": "cd \"${fileDirname}\" ; oj t -c \"${fileBasenameNoExtension}.exe\" --judge-command judge.exe",
       "detail": "The judge program must be named judge.exe and placed in the same directory as the main program.",
       "dependsOn": [
         "C/C++: g++.exe build active file (GCC)",
