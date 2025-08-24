@@ -9,7 +9,7 @@ class Greedy
 public:
   State solve_all()
   {
-    rep(i, 100)
+    while (timer.is_under(1.9))
     {
       State state;
       state = solve_partial(state);
