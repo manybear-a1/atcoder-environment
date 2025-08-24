@@ -89,6 +89,10 @@
     "prefix": "DFS-Graph-Recursion",
     "body": [
       "//DFSテンプレ",
+      "struct Edge",
+      "{",
+      "  ll to, idx;",
+      "};",
       "// ll N, M;",
       "vc<vc<Edge>> G;",
       "G.resize(N);",
