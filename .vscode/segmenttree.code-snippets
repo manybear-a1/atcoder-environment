@@ -12,12 +12,12 @@
       "S op(S a, S b){ return std::max(a, b); }",
       "S e(){ return E; }",
       "using Seg = atcoder::segtree<S, op, e>;",
-      "S target = 0;",
+      "// S target = 0;",
       "//target以上の最小の値を持つ区間の左端を返す",
       "//ref:https://qiita.com/recuraki/items/ae8e965b84f0e5443dc5",
-      "bool min_left(S x){",
-      "  return x < target;",
-      "}",
+      "// bool min_left(S x){",
+      "//   return x < target;",
+      "// }",
     ]
   },
 
@@ -42,9 +42,9 @@
       "S target = 0;",
       "//target以上の最小の値を持つ区間の左端を返す",
       "//ref:https://qiita.com/recuraki/items/ae8e965b84f0e5443dc5",
-      "bool min_left(S x){",
-      "  return x < target;",
-      "}",
+      "// bool min_left(S x){",
+      "//   return x < target;",
+      "// }",
     ]
   }
 }
