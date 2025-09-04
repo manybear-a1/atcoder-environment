@@ -420,7 +420,7 @@
       "// sample: https://atcoder.jp/contests/abc230/submissions/67802776",
       "ll isqrt(ll x)",
       "{",
-      "  ll l = 0, r = 5e9 + 1;",
+      "  ll l = 0, r = 3e9 + 1;",
       "  while (r - l > 1)",
       "  {",
       "    ll m = (l + r) / 2;",
