@@ -39,7 +39,7 @@
       "F composition(F f, F g){ return f+g; }",
       "F id(){ return ID; }",
       "using lazy_seg = atcoder::lazy_segtree<S, op, e, F, mapping, composition, id>;",
-      "S target = 0;",
+      "// S target = 0;",
       "//target以上の最小の値を持つ区間の左端を返す",
       "//ref:https://qiita.com/recuraki/items/ae8e965b84f0e5443dc5",
       "// bool min_left(S x){",
