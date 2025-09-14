@@ -8,8 +8,7 @@ public:
   SimulatedAnnealing(Greedy &greedy_)
   {
     this->greedy = greedy_;
-    this->greedy.solve_all();
-    this->solved_state = this->greedy.get_solved_state();
+    this->solved_state = this->greedy.solve_partial();
   }
 
   State simulate()

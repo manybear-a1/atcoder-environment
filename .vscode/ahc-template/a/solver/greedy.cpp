@@ -11,14 +11,18 @@ public:
   {
     while (timer.is_under(1.9))
     {
-      State state;
-      state = solve_partial(state);
+      state = solve_partial();
       chmax(solved_state, state);
     }
+#ifdef _GLIBCXX_DEBUG
+    ofstream coutgreedy("greedy_output.txt");
+    coutgreedy << state;
+    flush(coutgreedy);
+#endif
     return solved_state;
   }
 
-  State solve_partial(State &state, int seed = 0 /*If you are going to use beam search, don't make this method deterministic.*/)
+  State solve_partial()
   {
     // implement greedy algorithm here
     static_assert(false, "Greedy::solve_partial() not implemented!");

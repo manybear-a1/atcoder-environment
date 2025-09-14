@@ -23,6 +23,7 @@ public:
 Timer timer;
 
 // ref :https://atcoder.jp/contests/ahc048/submissions/66624955
+// 生成したい乱数が大きすぎるときは、mt19937_64を使う
 class Random
 {
 public:
