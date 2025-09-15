@@ -242,5 +242,26 @@
       " * @docs docs/string/rolling-hash.md",
       " */"
     ]
+  },
+  "run length encoding": {
+    "prefix": "run length encoding",
+    "body": [
+      "// A generic run-length encoding function that works with any container (vector or string)",
+      "// example:https://atcoder.jp/contests/abc259/submissions/69366843",
+      "auto runlength_encoding = []<typename Container>(const Container &container) {",
+      "  using value_type = typename decay<decltype(*begin(container))>::type;",
+      "  vc<pair<value_type, int>> res;",
+      "",
+      "  for (const auto &x : container) {",
+      "    if (res.empty() || res.back().first != x) {",
+      "      res.emplace_back(x, 1);",
+      "    } else {",
+      "      res.back().second++;",
+      "    }",
+      "  }",
+      "",
+      "  return res;",
+      "};"
+    ]
   }
 }
