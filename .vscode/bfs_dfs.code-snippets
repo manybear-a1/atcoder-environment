@@ -37,7 +37,7 @@
       "//ll N;",
       "//vector<vector<ll>> G;",
       "//BFS",
-      "vector<ll> dist(N, -1);",
+      "vector<ll> dist(N, INF);",
       "queue<ll> q;",
       "ll start = 0; // 開始頂点",
       "dist[start] = 0;",
