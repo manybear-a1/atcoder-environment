@@ -27,34 +27,6 @@
       "}",
     ]
   },
-  "string-combination-dp(耳DP)": {
-    "prefix": "string-combination-dp(耳DP)",
-    "body": [
-      "  // 耳DP",
-      "  // https://atcoder.jp/contests/typical90/tasks/typical90_h",
-      "  ll N;",
-      "  cin >> N;",
-      "  string S;",
-      "  cin >> S;",
-      "  string obj = \"atcoder\";",
-      "  vv<mint> dp(N + 1, vc<mint>(obj.size() + 1, 0));",
-      "  dp[0][0] = 1;",
-      "  rep(i, N)",
-      "  {",
-      "    rep(j, obj.size() + 1)",
-      "    {",
-      "      dp[i + 1][j] += dp[i][j];",
-      "      if (S[i] == obj[j])",
-      "      {",
-      "        dp[i + 1][j + 1] += dp[i][j];",
-      "      }",
-      "    }",
-      "  }",
-      "  cout << dp[N][obj.size()].val() << endl;",
-      "  // cout << ans << endl;",
-      "  return 0;"
-    ]
-  },
   "rolling hash": {
     "prefix": "rolling hash",
     "body": [
