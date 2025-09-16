@@ -240,7 +240,8 @@
       "/**",
       " * @brief Rolling Hash",
       " * @docs docs/string/rolling-hash.md",
-      " */"
+      " */",
+      "// example:https://atcoder.jp/contests/abc284/submissions/69382461",
     ]
   },
   "run length encoding": {
