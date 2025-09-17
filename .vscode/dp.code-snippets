@@ -124,7 +124,7 @@
       "};",
       "void dfs(int v, int p = -1) {  // 頂点v, 親p",
       "    int deg = G[v].size();     // 頂点vの次数",
-      "    if (deg == 1) {            // 末端にいる時",
+      "    if (deg == 1 && p != -1) {            // 末端にいる時",
       "        dp[v] = 0;",
       "        return;",
       "    }",
