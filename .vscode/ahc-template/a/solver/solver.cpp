@@ -24,6 +24,8 @@ void solve()
   //  BeamSearch beam_search(greedy, 10);
   //  State state = beam_search.search();
 
+  // Interactive Problem
+  // solve_query();
   // cout << state.actions.size() << endl;
   // TODO: check the output format of the problem.
   cout << state;

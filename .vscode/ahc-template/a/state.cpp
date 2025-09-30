@@ -47,9 +47,11 @@ public:
   {
     return a.calc_score() > b.calc_score();
   }
-  void apply(int data)
+  // returns if applied successfully
+  bool apply(int data)
   {
     actions.push_back({data});
     // Update  if necessary
+    return true;
   }
 };

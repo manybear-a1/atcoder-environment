@@ -11,12 +11,12 @@ public:
   {
     while (timer.is_under(1.9))
     {
-      state = solve_partial();
+      State state = solve_partial();
       chmax(solved_state, state);
     }
 #ifdef _GLIBCXX_DEBUG
     ofstream coutgreedy("greedy_output.txt");
-    coutgreedy << state;
+    coutgreedy << solved_state;
     flush(coutgreedy);
 #endif
     return solved_state;
@@ -26,7 +26,7 @@ public:
   {
     // implement greedy algorithm here
     static_assert(false, "Greedy::solve_partial() not implemented!");
-    return state;
+    return State();
   }
 
   const State &get_solved_state() const

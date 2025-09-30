@@ -132,7 +132,8 @@
     "strstream": "cpp",
     "string_view": "cpp",
     "generator": "cpp",
-    "text_encoding": "cpp"
+    "text_encoding": "cpp",
+    "climits": "cpp"
   },
   "cSpell.words": [
     "Chebyshev",
