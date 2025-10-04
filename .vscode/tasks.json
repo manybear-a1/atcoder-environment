@@ -232,7 +232,7 @@
     {
       "label": "Create-C++ (atcoder cli)",
       "type": "shell",
-      "command": "cd ./${input:year/month}/;acc new ${input:contestname} --template atcoder-c++"
+      "command": "cd ./algo/${input:year/month}/;acc new ${input:contestname} --template atcoder-c++"
     },
     {
       "label": "oj-prepare (atcoder)",
