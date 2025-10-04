@@ -2,5 +2,7 @@
 !.gitignore
 !/.vscode
 !/.github
-!/algo/.vscode
-!/algo/algo.code-workspace
+!/algo/
+/algo/*
+!algo/.vscode/
+
