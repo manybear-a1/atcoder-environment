@@ -150,4 +150,7 @@
   "chat.promptFiles": true,
   "C_Cpp.intelliSenseEngine": "Tag Parser",
   "editor.suggest.showDeprecated": false,
+  "github.copilot.enable": {
+    "*": false
+  },
 }
