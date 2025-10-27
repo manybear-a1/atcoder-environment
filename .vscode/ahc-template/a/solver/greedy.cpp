@@ -2,6 +2,8 @@
 #include "../template.cpp"
 #include "../util.cpp"
 #include "../state.cpp"
+#include "../input.cpp"
+extern GlobalState global_state;
 // extern int N;
 // extern vc<int>A;
 class Greedy
@@ -9,6 +11,7 @@ class Greedy
 public:
   State solve_all()
   {
+    solved_state = solve_partial();
     while (timer.is_under(1.9))
     {
       State state = solve_partial();

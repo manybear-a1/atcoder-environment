@@ -37,7 +37,7 @@ public:
       if (!timer.is_under(TIME_LIMIT))
         break;
 
-      State new_state = this->solved_state;
+      State new_state = now_state;
       modify(new_state);
       int new_score = new_state.calc_score();
       int diff = new_score - now_score;

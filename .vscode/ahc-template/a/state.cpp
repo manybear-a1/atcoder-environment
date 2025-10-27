@@ -1,5 +1,7 @@
 #pragma once
 #include "template.cpp"
+#include "input.cpp"
+extern GlobalState global_state;
 struct Action
 {
   // TODO: implement here for individual problem
@@ -30,7 +32,7 @@ public:
   // TODO: Implement output format for each problem
   friend ostream &operator<<(ostream &o, const State &state)
   {
-    // Example: output number of actions, then each action
+    // Example: output the number of actions, then each action
     // o << state.actions.size() << endl;
     // rep(i, state.actions.size())
     // {
@@ -47,9 +49,10 @@ public:
   {
     return a.calc_score() > b.calc_score();
   }
-  // returns if applied successfully
-  bool apply(int data)
+  void apply(int data)
   {
+    if (data < 0)
+      assert(false && "Wrong Value");
     actions.push_back({data});
     // Update  if necessary
     return true;

@@ -151,6 +151,10 @@
   "C_Cpp.intelliSenseEngine": "Tag Parser",
   "editor.suggest.showDeprecated": false,
   "github.copilot.enable": {
-    "*": false
+    "*": false,
+    "plaintext": true,
+    "markdown": false,
+    "scminput": false,
+    "typst": true
   },
 }
