@@ -16,6 +16,7 @@
       "  assert(a >= 0);",
       "  assert(b >= 0);",
       "  G[a].push_back(b);",
+      "  //undirected",
       "  G[b].push_back(a);",
       "}"
     ],
