@@ -36,7 +36,7 @@
     "prefix": "BFS-Graph",
     "body": [
       "//ll N;",
-      "//vector<vector<ll>> G;",
+      "//vector<vector<ll>> G(N);",
       "//BFS",
       "ll hasnt_visited = INF;",
       "vector<ll> dist(N, hasnt_visited);",
