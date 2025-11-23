@@ -12,11 +12,11 @@ public:
   State solve_all()
   {
     solved_state = solve_partial();
-    while (timer.is_under(1.9))
-    {
-      State state = solve_partial();
-      chmax(solved_state, state);
-    }
+    // while (timer.is_under(1.9))
+    // {
+    //   State state = solve_partial();
+    //   chmax(solved_state, state);
+    // }
 #ifdef _GLIBCXX_DEBUG
     ofstream coutgreedy("greedy_output.txt");
     coutgreedy << solved_state;
