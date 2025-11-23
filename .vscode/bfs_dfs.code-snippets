@@ -50,7 +50,7 @@
       "  q.pop();",
       "  for (auto v : G[u])",
       "  {",
-      "    if (dist[v] != hasnt_visited && dist[v] <= dist[u] + 1)",
+      "    if (dist[v] != hasnt_visited)",
       "      continue;",
       "    dist[v] = dist[u] + 1;",
       "    q.push(v);",
