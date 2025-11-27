@@ -109,7 +109,7 @@
       "vc<ll> last_order(N, -1);",
       "vc<ll> depth(N, 0);",
       "ll first_ptr = 0, last_ptr = 0;",
-      "// 再帰ラムダで DFS を定義(by o4-mini)",
+      "// 再帰ラムダで DFS を定義",
       "// selfにはdfs自身を渡す",
       "auto dfs = [&](auto &&self, ll u, ll d) -> ll",
       "{",
