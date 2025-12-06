@@ -6,7 +6,7 @@
       "#define vvl_kaiten(v)                               \\",
       "  {                                                 \\",
       "    ll n = size(v);                                 \\",
-      "    vv<ll> nx(n, vl(n));                            \\",
+      "    vc<vc<ll>> nx(n, vc<ll>(n));                            \\",
       "    rep(i, n) rep(j, n) nx[j][n - i - 1] = v[i][j]; \\",
       "    swap(nx, v);                                    \\",
       "  } // 時計回りに90°回転",
