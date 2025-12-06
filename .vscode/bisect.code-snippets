@@ -1,7 +1,7 @@
 {
   "bisect": {
-    "prefix": "bisect",
-    "description": "bisect",
+    "prefix": "binary_search",
+    "description": "binary_search",
     //ref:https://qiita.com/drken/items/97e37dd6143e33a64c8c
     "body": [
       "  auto isOK = [&](ll x)",
