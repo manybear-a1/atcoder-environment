@@ -2,58 +2,6 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "shell",
-      "label": "C/C++: cl.exe build active file",
-      "command": "cl.exe",
-      "args": [
-        "/Zi",
-        "/EHsc",
-        "/Fe:",
-        "${fileDirname}\\${fileBasenameNoExtension}.exe",
-        "${file}",
-        "/std:c++23",
-        "/Wall",
-        // "/wd5045",
-        // "/wd4515",
-        "/wd4244",
-        "/wd4365",
-        "/wd5045",
-        "/wd4820",
-        "/wd4514",
-        "-I",
-        "\"D:\\atcoder\\ac-library\"",
-        "/wd4018",
-        "/wd4267",
-        "/we4456",
-        "/we4459",
-        "/external:anglebrackets",
-        "/external:W0",
-        "/external:templates-",
-        "/sdl"
-        // "/external:I=\"C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools\"",
-      ],
-      "problemMatcher": [
-        "$msCompile"
-      ],
-      "group": {
-        "kind": "build",
-        //"isDefault": true
-      },
-      "options": {
-
-        "shell": {
-          "executable": "cmd.exe",
-          "args": [
-            "/C",
-
-            //"\"C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/VsDevCmd.bat\"",
-            "\"C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Auxiliary/Build/vcvars64.bat\"",
-            "&&"
-          ]
-        }
-      }
-    },
-    {
       "type": "cppbuild",
       "label": "C/C++: g++.exe build active file (GCC)",
       "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
@@ -64,9 +12,9 @@
         "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe",
         "-I",
-        "\"D:\\atcoder\\ac-library\"",
-        "-I",
-        "\"D:\\boost_1_88_0\"",
+        "\"C:\\Users\\takum\\Desktop\\atcoder-environment\\ac-library\"",
+        // "-I",
+        //"\"D:\\boost_1_88_0\"",
         "-std=c++23",
         "-W",
         "-Wall",
@@ -108,7 +56,7 @@
         "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe",
         "-I",
-        "\"D:\\atcoder\\ac-library\"",
+        "\"C:\\Users\\takum\\Desktop\\atcoder-environment\\ac-library\"",
         "-std=c++23",
         "-W",
         "-Wall",
@@ -147,9 +95,9 @@
         "-o",
         "${fileDirname}\\generate.exe",
         "-I",
-        "\"D:\\atcoder\\ac-library\"",
-        "-I",
-        "\"D:\\boost_1_88_0\"",
+        "\"C:\\Users\\takum\\Desktop\\atcoder-environment\\ac-library\"",
+        // "-I",
+        // "\"D:\\boost_1_88_0\"",
         "-std=c++23",
         "-W",
         "-Wall",
@@ -191,9 +139,9 @@
         "-o",
         "${fileDirname}\\naive.exe",
         "-I",
-        "\"D:\\atcoder\\ac-library\"",
-        "-I",
-        "\"D:\\boost_1_88_0\"",
+        "\"C:\\Users\\takum\\Desktop\\atcoder-environment\\ac-library\"",
+        // "-I",
+        // "\"D:\\boost_1_88_0\"",
         "-std=c++23",
         "-W",
         "-Wall",
@@ -225,16 +173,6 @@
       },
     },
     {
-      "label": "Create-Python (atcoder cli)",
-      "type": "shell",
-      "command": "cd ./${input:year/month}/; acc new ${input:contestname} --template atcoder-python -l 5055 "
-    },
-    {
-      "label": "Create-C++ (atcoder cli)",
-      "type": "shell",
-      "command": "cd ./algo/${input:year/month}/;acc new ${input:contestname} --template atcoder-c++"
-    },
-    {
       "label": "oj-prepare (atcoder)",
       "type": "shell",
       "command": "cd ./algo/${input:year/month}/;oj-prepare https://atcoder.jp/contests/${input:contestname} --config-file C:\\Users\\takum\\Desktop\\atcoder-environment\\.vscode\\oj-prepare\\config.toml"
@@ -259,20 +197,6 @@
       "options": {
         "cwd": "${fileDirname}"
       },
-    },
-    {
-      "label": "Run-python",
-      "type": "shell",
-      "command": "oj t -c \"python ${file}\" -d \"${fileDirname}\\test\"",
-      "options": {
-        "shell": {
-          "executable": "cmd",
-          "args": [
-            "/d",
-            "/c"
-          ]
-        }
-      }
     },
     {
       "type": "shell",
@@ -318,20 +242,6 @@
       "label": "Run_with_custom_judge_py",
       "type": "shell",
       "command": "oj t -c \"python ${file}\" -d \"${fileDirname}\\tests\" --judge-command \"python ${fileDirname}/judge.py",
-      "options": {
-        "shell": {
-          "executable": "cmd",
-          "args": [
-            "/d",
-            "/c"
-          ]
-        }
-      }
-    },
-    {
-      "label": "Submit",
-      "type": "shell",
-      "command": "cd \"${fileDirname}\" & acc submit ${fileBasename} -- -l 5055",
       "options": {
         "shell": {
           "executable": "cmd",
