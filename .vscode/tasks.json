@@ -224,34 +224,6 @@
         "C/C++: g++.exe build active file (GCC)",
       ],
     },
-    {
-      "label": "Run_with_error_py",
-      "type": "shell",
-      "command": "oj t -c \"python ${file}\" -d \"${fileDirname}\\tests\" -e \"${input:error}\"",
-      "options": {
-        "shell": {
-          "executable": "cmd",
-          "args": [
-            "/d",
-            "/c"
-          ]
-        }
-      }
-    },
-    {
-      "label": "Run_with_custom_judge_py",
-      "type": "shell",
-      "command": "oj t -c \"python ${file}\" -d \"${fileDirname}\\tests\" --judge-command \"python ${fileDirname}/judge.py",
-      "options": {
-        "shell": {
-          "executable": "cmd",
-          "args": [
-            "/d",
-            "/c"
-          ]
-        }
-      }
-    },
   ],
   "inputs": [
     {
