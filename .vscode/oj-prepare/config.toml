@@ -2,6 +2,6 @@ contest_directory = "./{contest_id}/{problem_id}"
 problem_directory = "."
 
 [templates]
-"main.cpp" = "D:/atcoder/.vscode/oj-prepare/main.cpp"
-"naive.cpp" = "D:/atcoder/.vscode/oj-prepare/naive.cpp"
-"generate.cpp" = "D:/atcoder/.vscode/oj-prepare/generate.cpp"
+"main.cpp" = "C:/Users/takum/Desktop/atcoder-environment/.vscode/oj-prepare/main.cpp"
+"naive.cpp" = "C:/Users/takum/Desktop/atcoder-environment/.vscode/oj-prepare/naive.cpp"
+"generate.cpp" = "C:/Users/takum/Desktop/atcoder-environment/.vscode/oj-prepare/generate.cpp"

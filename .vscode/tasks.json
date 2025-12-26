@@ -237,7 +237,7 @@
     {
       "label": "oj-prepare (atcoder)",
       "type": "shell",
-      "command": "cd ./algo/${input:year/month}/;oj-prepare https://atcoder.jp/contests/${input:contestname} --config-file D:\\atcoder\\.vscode\\oj-prepare\\config.toml"
+      "command": "cd ./algo/${input:year/month}/;oj-prepare https://atcoder.jp/contests/${input:contestname} --config-file C:\\Users\\takum\\Desktop\\atcoder-environment\\.vscode\\oj-prepare\\config.toml"
     },
     {
       "label": "oj generate random test",
