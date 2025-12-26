@@ -71,8 +71,8 @@ ${cplusplus.write_output(data)}
 
 #ifdef ONLINE_JUDGE
 #define NDEBUG
-#include <atcoder/all>
 #endif
+#include <atcoder/all>
 #include <bits/stdc++.h>
 // # include <boost/multiprecision/cpp_dec_float.hpp>
 // # include <boost/multiprecision/cpp_int.hpp>
