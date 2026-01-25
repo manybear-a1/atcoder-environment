@@ -1,4 +1,5 @@
 //https://qiita.com/Raclamusi/items/660f0f42c57e4371ed78
+//my library://my library:https://github.com/manybear-a1/atcoder-environment
 #ifdef INCLUDED_MAIN
 <%!
     import json
