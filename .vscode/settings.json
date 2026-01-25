@@ -148,7 +148,7 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
   "chat.promptFiles": true,
-  "C_Cpp.intelliSenseEngine": "Tag Parser",
+  "C_Cpp.intelliSenseEngine": "default",
   "editor.suggest.showDeprecated": false,
   "github.copilot.enable": {
     "*": false,
