@@ -5,6 +5,7 @@
 #include "greedy.cpp"
 // #include "simulated_annealing.cpp"
 // #include "beam_search.cpp"
+// #include "interactive.cpp"
 void solve()
 {
 
