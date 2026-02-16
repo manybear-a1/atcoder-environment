@@ -4,3 +4,4 @@ cd current-folder; pahcer run
 python ./a/combiner.py ./a/main.cpp ./a/combined.txt
 Github Copilot にignoreされたフォルダを渡すにはドラッグして持っていくと渡せる
 https://github.com/yunix-kyopro/pahcer-studio
+ObjectiveはMaxかMinを指定する。スコアが大きいほど良いならMax、小さいほど良いならMin。
