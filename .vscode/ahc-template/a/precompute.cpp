@@ -1,5 +1,6 @@
 #include "template.cpp"
 #include "util.cpp"
+#include "state.cpp"
 // Used for computing something beforehand.
 extern int N;
 extern GlobalState global_state;

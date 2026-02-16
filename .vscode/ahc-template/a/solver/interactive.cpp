@@ -1,6 +1,8 @@
 #pragma once
 #include "../template.cpp"
 #include "../util.cpp"
+#include "../state.cpp"
+#include "../interactive.cpp"
 extern GlobalState global_state;
 struct query_calculator
 {
