@@ -1,6 +1,7 @@
 #pragma once
 #include "../template.cpp"
 #include "../util.cpp"
+extern GlobalState global_state;
 struct query_calculator
 {
   int count_query = 0;

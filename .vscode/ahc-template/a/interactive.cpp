@@ -1,5 +1,6 @@
 #pragma once
 #include "template.cpp"
+extern GlobalState global_state;
 // for interactive problems
 #ifdef _GLIBCXX_DEBUG
 namespace debugjudge

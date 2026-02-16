@@ -1,7 +1,7 @@
 #pragma once
 #include "greedy.cpp"
 #include "../template.cpp"
-
+extern GlobalState global_state;
 class BeamSearch
 {
 public:
