@@ -38,6 +38,6 @@ void query_output(/*vc<int> &output*/)
   // cerr << output << endl;
 #endif
 #ifdef _GLIBCXX_DEBUG
-  query_input(/*output*/);
+  debugjudge::query_input(/*output*/);
 #endif
 }
