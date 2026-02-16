@@ -1,6 +1,6 @@
 #include "template.cpp"
 #include "util.cpp"
-
+// Used for computing something beforehand.
 extern int N;
 void precompute()
 {

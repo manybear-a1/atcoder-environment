@@ -1,6 +1,7 @@
 #pragma once
 #include "template.cpp"
 #include "input.cpp"
+// Store the state
 extern GlobalState global_state;
 struct Action
 {

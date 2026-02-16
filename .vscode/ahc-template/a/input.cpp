@@ -1,7 +1,7 @@
 #pragma once
 #include "template.cpp"
 #include "util.cpp"
-
+// This is where the program receives (the first) inputs from cin
 // TODO:Store input data here in global variables
 // you have to use extern to refer these variables;
 
