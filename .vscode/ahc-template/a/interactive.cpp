@@ -8,7 +8,7 @@ namespace debugjudge
 {
   istringstream iss;
   // override cin to generate answer of the query without judge system so that you can debug the problem.
-  void query_input(/*vc<int> &output*/)
+  void query_input(const vector<int> &output)
   {
     // When solving interactive problems, you need to provide the answer in the format of a string to debug.
     // calculate the answer of the query here.
@@ -21,13 +21,20 @@ namespace debugjudge
   }
 }
 #endif
-// Read the response from the judge after each turn
-vc<int> query_read()
+// Read the response from the judge and apply them to the state after each turn
+void query_read(State &state)
 {
+  // read the response from the judge and update the state
+  // you can change the parameters of the function as needed.
+  // sample input:? n x_1 x_2 ... x_n
+  // int n;
+  // cin >> n;
+  // vc<int> response(n);
+  // cin >> response;
 }
 // Template for interactive problem output.
 // you can change the parameters of the function as needed.
-void query_output(/*vc<int> &output*/)
+void query_output(const vector<int> &output)
 {
   // sample output:? n x_1 x_2 ... x_n
   // cout << "? " << output.size() << " ";
