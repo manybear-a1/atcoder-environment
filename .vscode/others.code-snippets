@@ -105,6 +105,35 @@
 			"  $1",
 			"}"
 		]
+	},
+	"Sliding Window":{
+		"description": "尺取り法",
+		"prefix":"sliding-window",
+		"body":[
+			"//ref:https://zenn.dev/taketooon/articles/6eea340f2f22e7",
+			"/*for-while-loop*/",
+			"// 尺取法(半開区間)",
+			"  ll res = 0;",
+			"  ll right = 0;",
+			"  rep(left, N) {",
+			"    // 1.次の要素に動かしていいのなら？P(l,r)の部分を変更する",
+			"    while (right < N && P(l, r)) {",
+			"      // rightを伸ばす",
+			"      right++;",
+			"    }",
+			"",
+			"    // 2.区間の現在の長さ",
+			"    res += (right - left);",
+			"",
+			"    // 3.leftをインクリメントする準備",
+			"    if (right == left) {",
+			"      right++;",
+			"    } else {",
+			"      // 減らす処理",
+			"    }",
+			"  }",
+			"}",
+		]
 	}
 }
 
